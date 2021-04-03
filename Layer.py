@@ -24,16 +24,5 @@ class Layer:
         return self.output
 
 
-layer1 = Layer(3, 2, False)
-layer2 = Layer(2, 2, True)
-
-layer1.forward_propagation([0.1, 0.3, 0.6])
-layer2.forward_propagation(layer1.output)
-
-print(layer1.output)
-
-print(layer2.output)
-
-
 
 
