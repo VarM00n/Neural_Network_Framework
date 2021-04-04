@@ -3,6 +3,7 @@ import numpy as np
 import csv
 import time
 from matplotlib import pyplot as plt
+import math
 
 
 class NN:
@@ -44,8 +45,7 @@ class NN:
 nn = NN(0.05)
 
 nn.add_layer(784, 15, False, True)
-nn.add_layer(15, 10, False, False)
-nn.add_layer(10, 10, True, False)
+nn.add_layer(15, 10, True, False)
 
 full_data_input = []
 full_data_output = []
@@ -69,14 +69,17 @@ with open('train.csv', 'r') as read_obj:
         count += 1
 
 start_time = time.time()
-for j in range(3):
+for j in range(30):
+    temp = 0
     for i in range(0, 1000):
         nn.training_inputs[0] = full_data_input[i]
         nn.training_outputs[0] = full_data_output[i]
-        nn.full_forward_pass(0)
+        prediction = nn.full_forward_pass(0)
+        if np.argmax(prediction) == np.argmax(full_data_output[i]):
+            temp += 1
         nn.full_backward_pass(0)
         nn.update_all()
-    print(j)
+    print("Accuracy: " + str(temp/1000))
 
 print("\n")
 nn.training_inputs[0] = full_data_input[10]
@@ -87,7 +90,7 @@ zzz = np.array(nn.training_inputs[0]).reshape((28, 28)) * 255
 plt.gray()
 plt.imshow(zzz, interpolation='nearest')
 plt.show()
-print(out)
+print(out*100)
 print(np.argmax(out))
 print(full_data_output[10])
 
