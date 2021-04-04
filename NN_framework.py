@@ -2,6 +2,7 @@ from Layer import Layer
 import numpy as np
 import csv
 import time
+from matplotlib import pyplot as plt
 
 
 class NN:
@@ -20,9 +21,6 @@ class NN:
         input_for_next_layer = self.training_inputs[num_of_train]
         for i in range(len(self.layers)):
             input_for_next_layer = self.layers[i].forward_propagation(input_for_next_layer)
-        # predictions = np.argmax(input_for_next_layer)
-        # sum_square = (np.sum(np.subtract(self.training_outputs[0], input_for_next_layer)**2))
-        # print(sum_square)
         return input_for_next_layer
 
     def full_backward_pass(self, num_of_training):
@@ -45,7 +43,8 @@ class NN:
 
 nn = NN(0.05)
 
-nn.add_layer(784, 10, False)
+nn.add_layer(784, 15, False)
+nn.add_layer(15, 10, False)
 nn.add_layer(10, 10, True)
 
 full_data_input = []
@@ -70,7 +69,7 @@ with open('train.csv', 'r') as read_obj:
         count += 1
 
 start_time = time.time()
-for j in range(500):
+for j in range(3):
     for i in range(0, 1000):
         nn.training_inputs[0] = full_data_input[i]
         nn.training_outputs[0] = full_data_output[i]
@@ -79,32 +78,40 @@ for j in range(500):
         nn.update_all()
     print(j)
 
-nn.training_inputs[0] = full_data_input[2]
+print("\n")
+nn.training_inputs[0] = full_data_input[10]
 out = nn.full_forward_pass(0)
+
+zzz = np.array(nn.training_inputs[0]).reshape((28, 28)) * 255
+
+plt.gray()
+plt.imshow(zzz, interpolation='nearest')
+plt.show()
 print(np.argmax(out))
-print(full_data_output[2])
+print(full_data_output[10])
 
 print("\n")
 
-nn.training_inputs[0] = full_data_input[8]
-out = nn.full_forward_pass(0)
-print(np.argmax(out))
-print(full_data_output[8])
-
-print("\n")
-
-nn.training_inputs[0] = full_data_input[66]
-out = nn.full_forward_pass(0)
-print(np.argmax(out))
-print(full_data_output[66])
-
-print("\n")
-
-nn.training_inputs[0] = full_data_input[74]
-out = nn.full_forward_pass(0)
-print(np.argmax(out))
-print(full_data_output[74])
-
-print("\n")
+# nn.training_inputs[0] = full_data_input[8]
+# out = nn.full_forward_pass(0)
+# print(out)
+# print(np.argmax(out))
+# print(full_data_output[8])
+#
+# print("\n")
+#
+# nn.training_inputs[0] = full_data_input[66]
+# out = nn.full_forward_pass(0)
+# print(np.argmax(out))
+# print(full_data_output[66])
+#
+# print("\n")
+#
+# nn.training_inputs[0] = full_data_input[74]
+# out = nn.full_forward_pass(0)
+# print(np.argmax(out))
+# print(full_data_output[74])
+#
+# print("\n")
 
 print("--- %s seconds ---" % (time.time() - start_time))
