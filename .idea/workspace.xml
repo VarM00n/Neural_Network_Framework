@@ -27,6 +27,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/NeuralNetworks3x3" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.NN_framework">
@@ -90,7 +91,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617400082287</updated>
       <workItem from="1617400087887" duration="3572000" />
-      <workItem from="1617446444814" duration="1585000" />
+      <workItem from="1617446444814" duration="11156000" />
+      <workItem from="1617534005481" duration="3749000" />
     </task>
     <servers />
   </component>
@@ -98,38 +100,42 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1617448013078">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1617448073280">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617448013078" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1617448013078">
+    <state x="740" y="275" key="FileChooserDialogImpl/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617448073280" />
+    <state width="1877" height="369" key="GridCell.Tab.0.bottom" timestamp="1617537250375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617448013078" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1617448013078">
+    <state width="1877" height="369" key="GridCell.Tab.0.bottom/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617537250375" />
+    <state width="1877" height="369" key="GridCell.Tab.0.center" timestamp="1617537250375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617448013078" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1617448013078">
+    <state width="1877" height="369" key="GridCell.Tab.0.center/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617537250375" />
+    <state width="1877" height="369" key="GridCell.Tab.0.left" timestamp="1617537250375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617448013078" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1617447837632">
+    <state width="1877" height="369" key="GridCell.Tab.0.left/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617537250375" />
+    <state width="1877" height="369" key="GridCell.Tab.0.right" timestamp="1617537250375">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617447837632" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1617447837632">
+    <state width="1877" height="369" key="GridCell.Tab.0.right/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617537250375" />
+    <state width="1877" height="369" key="GridCell.Tab.1.bottom" timestamp="1617537251018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617447837632" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1617447837632">
+    <state width="1877" height="369" key="GridCell.Tab.1.bottom/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617537251018" />
+    <state width="1877" height="369" key="GridCell.Tab.1.center" timestamp="1617537251018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617447837632" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1617447837632">
+    <state width="1877" height="369" key="GridCell.Tab.1.center/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617537251018" />
+    <state width="1877" height="369" key="GridCell.Tab.1.left" timestamp="1617537251018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617447837632" />
+    <state width="1877" height="369" key="GridCell.Tab.1.left/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617537251018" />
+    <state width="1877" height="369" key="GridCell.Tab.1.right" timestamp="1617537251018">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="369" key="GridCell.Tab.1.right/1920.159.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617537251018" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1617400283189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -140,14 +146,14 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/NN_framework.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="1" />
+          <line>47</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Neural_Network_Framework$NN_framework.coverage" NAME="NN_framework Coverage Results" MODIFIED="1617448013069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Neural_Network_Framework$NN_framework.coverage" NAME="NN_framework Coverage Results" MODIFIED="1617537250204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Neural_Network_Framework$Layer.coverage" NAME="Layer Coverage Results" MODIFIED="1617447655651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
