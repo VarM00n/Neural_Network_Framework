@@ -14,8 +14,8 @@ class NN:
     def __init__(self, learning_rate):
         self.learning_rate = learning_rate
 
-    def add_layer(self, inputs, neurons, last_layer):
-        self.layers.append(Layer(inputs, neurons, last_layer))
+    def add_layer(self, inputs, neurons, last_layer, first_layer):
+        self.layers.append(Layer(inputs, neurons, last_layer, first_layer))
 
     def full_forward_pass(self, num_of_train):
         input_for_next_layer = self.training_inputs[num_of_train]
@@ -43,9 +43,9 @@ class NN:
 
 nn = NN(0.05)
 
-nn.add_layer(784, 15, False)
-nn.add_layer(15, 10, False)
-nn.add_layer(10, 10, True)
+nn.add_layer(784, 15, False, True)
+nn.add_layer(15, 10, False, False)
+nn.add_layer(10, 10, True, False)
 
 full_data_input = []
 full_data_output = []
@@ -87,6 +87,7 @@ zzz = np.array(nn.training_inputs[0]).reshape((28, 28)) * 255
 plt.gray()
 plt.imshow(zzz, interpolation='nearest')
 plt.show()
+print(out)
 print(np.argmax(out))
 print(full_data_output[10])
 
