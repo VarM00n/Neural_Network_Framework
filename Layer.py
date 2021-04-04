@@ -2,9 +2,6 @@ import numpy as np
 
 from Activation_Functions import *
 
-# TODO complete activation functions
-# TODO create Neural Network class
-
 
 class Layer:
 
@@ -31,7 +28,6 @@ class Layer:
             self.output = np.array([relu(x) for x in self.z])
         return self.output
 
-    # TODO change updating dw with training_input (not always the same)
     def back_propagation(self, training_output, training_input, prev_layer=None, next_layer=None):
         if self.last_layer:
             self.dz = self.output - training_output

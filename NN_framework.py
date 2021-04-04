@@ -20,26 +20,26 @@ class NN:
 
     def full_forward_pass(self, num_of_train):
         input_for_next_layer = self.training_inputs[num_of_train]
-        for i in range(len(self.layers)):
-            input_for_next_layer = self.layers[i].forward_propagation(input_for_next_layer)
+        for layer_num in range(len(self.layers)):
+            input_for_next_layer = self.layers[layer_num].forward_propagation(input_for_next_layer)
         return input_for_next_layer
 
     def full_backward_pass(self, num_of_training):
-        for i in range(len(self.layers) - 1, -1, -1):
-            if i - 1 >= 0:
-                prev_layer = nn.layers[i - 1]
+        for layer_num in range(len(self.layers) - 1, -1, -1):
+            if layer_num - 1 >= 0:
+                prev_layer = nn.layers[layer_num - 1]
             else:
                 prev_layer = None
-            if i + 1 < len(self.layers):
-                next_layer = nn.layers[i+1]
+            if layer_num + 1 < len(self.layers):
+                next_layer = nn.layers[layer_num+1]
             else:
                 next_layer = None
-            nn.layers[i].back_propagation(nn.training_outputs[num_of_training], nn.training_inputs[num_of_training],
-                                          prev_layer, next_layer)
+            nn.layers[layer_num].back_propagation(nn.training_outputs[num_of_training],
+                                                  nn.training_inputs[num_of_training], prev_layer, next_layer)
 
     def update_all(self):
-        for i in range(len(self.layers)):
-            self.layers[i].update_values(self.learning_rate)
+        for layer_num in range(len(self.layers)):
+            self.layers[layer_num].update_values(self.learning_rate)
 
 
 nn = NN(0.05)
