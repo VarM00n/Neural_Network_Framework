@@ -11,5 +11,5 @@ def relu_deriv(x):
 
 
 def softmax(array, x):
-    sum_of_exp = np.sum(np.exp(array))
-    return math.exp(x)/sum_of_exp
+    sum_of_exp = np.sum(np.exp(array)/200)
+    return (math.exp(x)/200)/sum_of_exp

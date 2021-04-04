@@ -1,12 +1,13 @@
 from Layer import Layer
 import numpy as np
 import csv
+import time
 
 
 class NN:
     layers = []
-    training_inputs = [[0.3, 0.1, 0.4]]
-    training_outputs = [[1, 0]]
+    training_inputs = [[]]
+    training_outputs = [[]]
     learning_rate = 0
 
     def __init__(self, learning_rate):
@@ -19,6 +20,9 @@ class NN:
         input_for_next_layer = self.training_inputs[num_of_train]
         for i in range(len(self.layers)):
             input_for_next_layer = self.layers[i].forward_propagation(input_for_next_layer)
+        # predictions = np.argmax(input_for_next_layer)
+        # sum_square = (np.sum(np.subtract(self.training_outputs[0], input_for_next_layer)**2))
+        # print(sum_square)
         return input_for_next_layer
 
     def full_backward_pass(self, num_of_training):
@@ -39,11 +43,68 @@ class NN:
             self.layers[i].update_values(self.learning_rate)
 
 
-nn = NN(0.2)
+nn = NN(0.05)
 
 nn.add_layer(784, 10, False)
 nn.add_layer(10, 10, True)
-nn.full_forward_pass(0)
-nn.full_backward_pass(0)
-nn.update_all()
-print("done")
+
+full_data_input = []
+full_data_output = []
+
+with open('train.csv', 'r') as read_obj:
+    csv_reader = csv.reader(read_obj)
+    count = 0
+    for row in csv_reader:
+        if count != 0:
+            full_data_input.append([])
+            full_data_output.append([])
+            for i in range(0, 10):
+                if int(row[0]) == i:
+                    full_data_output[count - 1].append(1)
+                else:
+                    full_data_output[count - 1].append(0)
+            for i in range(1, len(row)):
+                full_data_input[count - 1].append(int(row[i]) / 255)
+            if count == 1000:
+                break
+        count += 1
+
+start_time = time.time()
+for j in range(500):
+    for i in range(0, 1000):
+        nn.training_inputs[0] = full_data_input[i]
+        nn.training_outputs[0] = full_data_output[i]
+        nn.full_forward_pass(0)
+        nn.full_backward_pass(0)
+        nn.update_all()
+    print(j)
+
+nn.training_inputs[0] = full_data_input[2]
+out = nn.full_forward_pass(0)
+print(np.argmax(out))
+print(full_data_output[2])
+
+print("\n")
+
+nn.training_inputs[0] = full_data_input[8]
+out = nn.full_forward_pass(0)
+print(np.argmax(out))
+print(full_data_output[8])
+
+print("\n")
+
+nn.training_inputs[0] = full_data_input[66]
+out = nn.full_forward_pass(0)
+print(np.argmax(out))
+print(full_data_output[66])
+
+print("\n")
+
+nn.training_inputs[0] = full_data_input[74]
+out = nn.full_forward_pass(0)
+print(np.argmax(out))
+print(full_data_output[74])
+
+print("\n")
+
+print("--- %s seconds ---" % (time.time() - start_time))

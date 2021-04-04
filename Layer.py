@@ -19,8 +19,10 @@ class Layer:
         self.dz = np.zeros(neurons)
         self.output = np.zeros(neurons)
         self.last_layer = last_layer
+        self.neurons = neurons
 
     def forward_propagation(self, input_values):
+        self.z = np.zeros(self.neurons)
         self.z = self.weights.dot(input_values) + self.bias
         if self.last_layer:
             self.output = np.array([softmax(self.z, x) for x in self.z])
@@ -45,3 +47,4 @@ class Layer:
     def update_values(self, learning_rate):
         self.weights = self.weights - learning_rate * self.dw
         self.bias = self.bias - learning_rate * self.db
+        self.bias = self.bias.reshape(self.neurons, )
