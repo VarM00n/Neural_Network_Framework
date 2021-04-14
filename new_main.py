@@ -50,7 +50,7 @@ for i in range(len(full_data_input)):
     # plt.imshow(zzz, interpolation='nearest')
     # plt.show()
     # print("Prediction: " + X[int(np.argmax(out))])
-    # print("Actual: " + str(np.argmax(full_data_output[i])))
+    # print("Actual: " + X[int(np.argmax(full_data_output[index])-1)])
     if (np.argmax(out) + 1) == np.argmax(full_data_output[index]):
         temp += 1
 print("Accuracy: " + str(temp / len(full_data_input)))

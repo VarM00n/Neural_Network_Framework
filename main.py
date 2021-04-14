@@ -8,21 +8,21 @@ from matplotlib import pyplot as plt
 X = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W",
      "X", "Y", "Z"]
 
-nn = NN(0.001)  # initializing neural network with learning rate as a param
+nn = NN(0.002)  # initializing neural network with learning rate as a param
 
-nn.add_layer(784, 300, False, True, 1)  # prev_layer_neurons, curr_layer_neurons, isLastLayer, isFirstLayer
-nn.add_layer(300, 26, True, False, 3)
+nn.add_layer(784, 128, False, True, 1)  # prev_layer_neurons, curr_layer_neurons, isLastLayer, isFirstLayer
+nn.add_layer(128, 26, True, False, 2)
 
 full_data_input = []
 full_data_output = []
 
-nn.load_variables()
+# nn.load_variables()
 
 mndata = MNIST("letters")
 print("done loading")
 images, labels = mndata.load_training()
 
-for i in range(len(images)):
+for i in range(50000):
     # index = random.randrange(0, len(images))
     full_data_output.append([])
     full_data_input.append([])
@@ -37,7 +37,7 @@ for i in range(len(images)):
 
 accuracy = 0
 l = 0
-for i in range(30):
+for i in range(2000):
     l += 1
     temp = 0
     for i in range(0, len(full_data_input)):
@@ -50,6 +50,8 @@ for i in range(30):
         nn.update_all()
     accuracy = temp/len(full_data_input)
     print("Accuracy: " + str(temp/len(full_data_input)))
+    if accuracy == 1:
+        break
 print("Epochs: " + str(l))
 
 nn.save_variables()
