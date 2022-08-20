@@ -1,4 +1,0 @@
-nn = NN(0.001)  # initializing neural network with learning rate as a param
-
-nn.add_layer(784, 300, False, True, 1)  # prev_layer_neurons, curr_layer_neurons, isLastLayer, isFirstLayer
-nn.add_layer(300, 26, True, False, 3)
