@@ -1,15 +1,3 @@
-DataSets/*
-letters/*
-Letters_From_OCR/*
-samles/*
-savedWages/*
+__pycache__/*
 venv/*
-www/*
 function.py
-main.py
-new_main.py
-*.csv
-run.py
-__pycache__/
-.idea/
-Neural_Network_Framework
