@@ -26,22 +26,20 @@ class Layer:
         return self.output
 
     def back_propagation(self, training_output, training_input, prev_layer=None, next_layer=None):
-        if self.last_layer and self.first_layer:
-            pass
-        elif self.last_layer:
+        # Calculation of dz
+        if self.activation_function == softmax:
             self.dz = self.output - training_output
-            temp = self.dz.reshape((-1, 1))
-            self.dw = temp * prev_layer.output
-            self.db = self.dz
         else:
-            temp1 = next_layer.weights.T
+            transformed_weights = next_layer.weights.T
             temp2 = next_layer.dz.reshape((-1, 1))
-            self.dz = temp1.dot(temp2).T * np.array([relu_deriv(x) for x in self.z])
-            if self.first_layer:
-                self.dw = self.dz.reshape((-1, 1)) * training_input
-            else:
-                self.dw = self.dz.reshape((-1, 1)) * prev_layer.output
-            self.db = self.dz
+            self.dz = transformed_weights.dot(temp2).T * np.array([relu_deriv(x) for x in self.z])
+        # Calculation of dw
+        if self.first_layer:
+            self.dw = self.dz.reshape((-1, 1)) * training_input
+        else:
+            self.dw = self.dz.reshape((-1, 1)) * prev_layer.output
+        # Calculation of db
+        self.db = self.dz        
 
     def update_values(self, learning_rate):
         self.weights = self.weights - learning_rate * self.dw

@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '1.17'
+VERSION = '1.171'
 DESCRIPTION = 'Neural network framework'
 LONG_DESCRIPTION = 'Neural network framework for learning purposes'
 
