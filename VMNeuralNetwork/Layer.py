@@ -1,5 +1,5 @@
 import numpy as np
-from Activation_Functions import *
+from .Activation_Functions import *
 
 
 class Layer:
@@ -21,12 +21,8 @@ class Layer:
         self.id_num = id_num
 
     def forward_propagation(self, input_values):
-        self.z = np.zeros(self.neurons)
         self.z = self.weights.dot(input_values) + self.bias
-        if self.last_layer:
-            self.output = np.array([self.activation_function(self.z, x) for x in self.z])
-        else:
-            self.output = np.array([self.activation_function(x) for x in self.z])
+        self.output = np.array([self.activation_function(self.z, x) for x in self.z])
         return self.output
 
     def back_propagation(self, training_output, training_input, prev_layer=None, next_layer=None):

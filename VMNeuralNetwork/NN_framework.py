@@ -1,10 +1,5 @@
-from multiprocessing.spawn import prepare
-from Layer import Layer
+from .Layer import Layer
 import numpy as np
-import csv
-import time
-from matplotlib import pyplot as plt
-import math
 
 
 class NN:
