@@ -30,7 +30,7 @@ class NN:
         input_for_next_layer = self.full_data_input[num_of_train]
         for layer_num in range(len(self.layers)):
             input_for_next_layer = self.layers[layer_num].forward_propagation(input_for_next_layer)
-        return input_for_next_layer
+        return np.argmax(input_for_next_layer)
 
     def full_backward_pass(self, num_of_training):
         number_of_layers = len(self.layers) - 1 if len(self.layers) - 1 != 0 else len(self.layers)
@@ -70,7 +70,7 @@ class NN:
             temp = 0
             for j in range(0, len(self.full_data_input)):
                 prediction = self.predict(j)
-                temp += self.check_if_same_result(np.argmax(prediction), np.argmax(self.full_data_output[j]))
+                temp += self.check_if_same_result(prediction, np.argmax(self.full_data_output[j]))
                 self.full_backward_pass(j)
                 self.update_all()
             break_flag, prev_accuracy = self.calculate_accuracy(temp, prev_accuracy, accuracy, i)

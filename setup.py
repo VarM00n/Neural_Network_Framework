@@ -17,8 +17,8 @@ setup(
                       'scipy'],
     keywords='conversion',
     classifiers= [
-        "Development Status ::Alpha",
-        "Intended Audience :: Students",
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Education",
         'License :: OSI Approved :: MIT License',
         "Programming Language :: Python :: 3",
     ]
